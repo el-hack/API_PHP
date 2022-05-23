@@ -7,9 +7,9 @@ class Database{
     // Connexion a la base de données
 
     private $host = 'localhost' ;
-    private $db_name = 'abonnement' ;
+    private $db_name = 'essaie' ;
     private $username = 'root' ;
-    private $password = 'root';
+    private $password = '';
     public $connexion ;
 
     //getter pour la connexion 

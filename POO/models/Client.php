@@ -12,7 +12,7 @@ class Client{
     }
 
     public function lire(){
-        $sql = "SELECT * FROM client";
+        $sql = "SELECT * FROM gestionapp_client";
         $requete = $this->connexion->prepare($sql);
         $requete->execute();
         return $requete ; 

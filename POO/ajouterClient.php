@@ -19,14 +19,14 @@ if ($_SERVER['REQUEST_METHOD']  == 'POST') {
 
 
     // On instancie 
-        if (!empty($_POST["nomClient"]) && !empty($_POST["prenomClient"]) && !empty($_POST["adresse"]) && !empty($_POST["statut"])) {
+        if (!empty($_POST["nom"]) && !empty($_POST["prenom"]) && !empty($_POST["adresse"]) && !empty($_POST["statut"])) {
             $client = new Client($db);
-            $nom = htmlspecialchars($_POST['nomClient']);
-            $prenom = htmlspecialchars($_POST['prenomClient']);
+            $nom = htmlspecialchars($_POST['nom']);
+            $prenom = htmlspecialchars($_POST['prenom']);
             $adresse = htmlspecialchars($_POST['adresse']);
             $statut = htmlspecialchars($_POST['statut']);
 
-            $requete = $db->prepare("INSERT INTO `client` (`idClient`, `nomClient`, `prenomClien`, `adresse`, `statut`) VALUES (NULL, :nom, :prenom, :adresse, :statut);");
+            $requete = $db->prepare("INSERT INTO `gestionapp_client` (`id`, `nom`, `prenom`, `adresse`, `statut`) VALUES (NULL, :nom, :prenom, :adresse, :statut);");
             $requete->bindParam(':nom' , $nom);
             $requete->bindParam(':prenom' , $prenom);
             $requete->bindParam(':adresse' , $adresse);
